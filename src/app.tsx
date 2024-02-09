@@ -1,4 +1,5 @@
 import logo from './assets/logo-nlw.svg'
+import { NoteCard } from './components/note-card'
 
 export function App() {
   return (
@@ -25,38 +26,11 @@ export function App() {
           </p>
         </div>
         
-        <div className='rounded-md bg-slate-800 p-5 space-y-3 overflow-hidden relative'>
-          <span className='text-sm font-medium text-slate-300'>
-            Há 4 dias
-          </span>
-          <p className='text-sm leading-6 text-slate-400'>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro vero unde illum consectetur perspiciatis enim. Nulla at omnis animi accusamus, recusandae illum possimus assumenda eum, doloribus nam consequuntur modi sequi.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro vero unde illum consectetur perspiciatis enim. Nulla at omnis animi accusamus, recusandae illum possimus assumenda eum, doloribus nam consequuntur modi sequi.
-          </p>
+        <NoteCard />
+        <NoteCard />
+        <NoteCard />
+        <NoteCard />
 
-          <div className='absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/60 pointer-events-none' />
-        </div>
-
-        <div className='rounded-md bg-slate-800 p-5 space-y-3 overflow-hidden relative'>
-          <span className='text-sm font-medium text-slate-300'>
-            Há 2 dias
-          </span>
-          <p className='text-sm leading-6 text-slate-400'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus eius, ducimus itaque esse fuga et asperiores labore quis maiores qui totam soluta quaerat ipsam, sit suscipit eaque, sapiente mollitia aut!Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus eius, ducimus itaque esse fuga et asperiores labore quis maiores qui totam soluta quaerat ipsam, sit suscipit eaque, sapiente mollitia aut!
-          </p>
-
-          <div className='absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/60 pointer-events-none' />
-        </div>
-
-        <div className='rounded-md bg-slate-800 p-5 space-y-3 overflow-hidden relative'>
-          <span className='text-sm font-medium text-slate-300'>
-            Há 2 dias
-          </span>
-          <p className='text-sm leading-6 text-slate-400'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus eius, ducimus itaque esse fuga et asperiores labore quis maiores qui totam soluta quaerat ipsam, sit suscipit eaque, sapiente mollitia aut!Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus eius, ducimus itaque esse fuga et asperiores labore quis maiores qui totam soluta quaerat ipsam, sit suscipit eaque, sapiente mollitia aut!
-          </p>
-
-          <div className='absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/60 pointer-events-none' />
-        </div>
       </div>
     </div>
   )
