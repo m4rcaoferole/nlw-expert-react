@@ -1,8 +1,13 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { X } from 'lucide-react';
 import { ChangeEvent, FormEvent, useState } from 'react';
+import { toast } from 'sonner'
 
-export function NoteNewCard() {
+interface NotesNewCardProps {
+  onNoteCreated: (content: string) => void
+}
+
+export function NoteNewCard({ onNoteCreated }: NotesNewCardProps) {
   const [shouldShowOnboarding, setShouldShowOnboarding] = useState(true);
   const [content, setContent] = useState('');
 
@@ -21,7 +26,12 @@ export function NoteNewCard() {
   function handleSalveNote(event: FormEvent) {
     event.preventDefault();
 
-    console.log(content);
+    onNoteCreated(content);
+
+    setContent('')
+    setShouldShowOnboarding(true)
+
+    toast.success('Nota criada com sucesso!')
   }
 
   return (
@@ -46,14 +56,7 @@ export function NoteNewCard() {
 
               {shouldShowOnboarding ? (
                 <p className="text-sm leading-6 text-slate-400">
-                  Comece
-                  <button className="font-medium text-lime-400 hover:underline">
-                    gravando uma nota
-                  </button>
-                  em áudio ou se preferir
-                  <button
-                    onClick={handleStartEditor}
-                    className="font-medium text-lime-400 hover:underline"
+                  Comece <button className="font-medium text-lime-400 hover:underline"> gravando uma nota </button> em áudio ou se preferir <button onClick={handleStartEditor} className="font-medium text-lime-400 hover:underline"
                   >
                     utilize apenas texto
                   </button>
@@ -64,6 +67,7 @@ export function NoteNewCard() {
                   autoFocus
                   className="text-sm leading-6 text-slate-400 bg-transparent resize-none flex-1 outline-none"
                   onChange={handleContentChanged}
+                  value={content}
                 />
               )}
             </div>
